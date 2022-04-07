@@ -33,7 +33,7 @@ if uploaded_file is not None:
     st.write("Convert gambar ke grayscale 28x28 pixel image . . . . . . ")
     #prepped_img = image_prep.imageprepare(uploaded_image)
     st.write("Klasifikasi Gambar . . . . .")
-    prediction = np.argmax(model.predict(prepped_img))
+    prediction = np.argmax(model.predict(uploaded_image))
     alphabet = label_dic[prediction]
     st.subheader(f'Gambar tersebut adalah alphabet  {alphabet}')
 
