@@ -1,7 +1,7 @@
 import streamlit as st
 from tensorflow import keras
 from PIL import Image, ImageFilter
-#from utils import image_prep
+from utils import image_prep
 import numpy as np
 import string
 import os
@@ -28,7 +28,7 @@ uploaded_file = st.file_uploader("Pilih Gambar (.jpg)..." , type = 'jpg')
 
 if uploaded_file is not None:
     uploaded_image = Image.open(uploaded_file)
-    st.image(uploaded_image, caption='Gambar yang dipilih', use_column_width=True)
+    #st.image(uploaded_image, caption='Gambar yang dipilih', use_column_width=True)
     st.write("")
     st.write("Convert gambar ke grayscale 28x28 pixel image . . . . . . ")
     prepped_img = image_prep.imageprepare(uploaded_image)
