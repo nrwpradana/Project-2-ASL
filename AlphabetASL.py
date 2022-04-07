@@ -1,7 +1,7 @@
 import streamlit as st
 from tensorflow import keras
 from PIL import Image, ImageFilter
-from utils import image_prep
+#from utils import image_prep
 import numpy as np
 import string
 import os
@@ -30,9 +30,9 @@ if uploaded_file is not None:
     uploaded_image = Image.open(uploaded_file)
     st.image(uploaded_image, caption='Gambar yang dipilih', use_column_width=True)
     st.write("")
-    st.write("Convert gambar ke grayscale 28x28 pixel image.... ")
-    prepped_img = image_prep.imageprepare(uploaded_image)
-    #st.write("Klasifikasi...")
+    st.write("Convert gambar ke grayscale 28x28 pixel image . . . . . . ")
+    #prepped_img = image_prep.imageprepare(uploaded_image)
+    st.write("Klasifikasi Gambar . . . . .")
     prediction = np.argmax(model.predict(prepped_img))
     alphabet = label_dic[prediction]
     st.subheader(f'Gambar tersebut adalah alphabet  {alphabet}')
