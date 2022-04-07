@@ -1,7 +1,7 @@
 import streamlit as st
 from tensorflow import keras
 from PIL import Image, ImageFilter
-#from utils import image_prep
+from utils import image_prep
 import numpy as np
 import string
 import os
@@ -17,7 +17,7 @@ st.subheader('Image Recognition by Nadhiar')
 # @st.cache
 model = keras.models.load_model(modelpath)
 
-
+st.write("")
 st.write('CNN model')
 
 label_dic = {i:string.ascii_uppercase[i] for i in range(26)}
@@ -31,9 +31,9 @@ if uploaded_file is not None:
     st.image(uploaded_image, caption='Gambar yang dipilih', use_column_width=True)
     st.write("")
     st.write("Convert gambar ke grayscale 28x28 pixel image . . . . . . ")
-    #prepped_img = image_prep.imageprepare(uploaded_image)
+    prepped_img = image_prep.imageprepare(uploaded_image)
     st.write("Klasifikasi Gambar . . . . .")
-    prediction = np.argmax(model.predict(uploaded_image))
+    prediction = np.argmax(model.predict(prepped_img))
     alphabet = label_dic[prediction]
     st.subheader(f'Gambar tersebut adalah alphabet  {alphabet}')
 
