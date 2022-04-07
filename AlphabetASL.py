@@ -18,7 +18,7 @@ st.subheader('Image Recognition by Nadhiar')
 model = keras.models.load_model(modelpath)
 
 st.write("")
-st.write('CNN model')
+st.write('Berbasis CNN model')
 
 label_dic = {i:string.ascii_uppercase[i] for i in range(26)}
 label_dic.pop(9)
