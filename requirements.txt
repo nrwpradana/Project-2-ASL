@@ -4,3 +4,4 @@ opencv-python
 pillow
 utils
 numpy
+requests
