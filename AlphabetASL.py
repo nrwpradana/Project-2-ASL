@@ -36,7 +36,6 @@ if uploaded_file is not None:
     prediction = np.argmax(model.predict(prepped_img))
     alphabet = label_dic[prediction]
     st.subheader(f'Gambar tersebut adalah alphabet  {alphabet}')
-
     
 
 
